@@ -11,16 +11,18 @@
 
 - name: Include Configuration
   include_tasks: configure.yml
+  when: wtd_monit_state != absent
 
 - name: Include Default Checks
   include_tasks: default_checks.yml
-  when: wtd_monit_default_checks
+  when: wtd_monit_default_checks and wtd_monit_state != absent
 
 - name: Enable and Start Monit
   service:
     name: monit
     state: started
     enabled: yes
+  when: wtd_monit_state != absent
   tags:
     - monit
 
@@ -28,6 +30,6 @@
   service:
     name: monit
     state: reloaded
-  when: wtd_monit_reload_checks
+  when: wtd_monit_reload_checks and wtd_monit_state != absent
   tags:
     - monit
