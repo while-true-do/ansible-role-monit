@@ -12,7 +12,6 @@
   tags:
     - monit
 
-
 - name: Create Check "Filesystem"
   template:
     src: default_filesystem.j2
