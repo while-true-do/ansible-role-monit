@@ -1,0 +1,45 @@
+---
+# defaults/main.yml for monit
+# You can set the state to ["present"|"absent"|"latest"]
+wtd_monit_state: "present"
+wtd_monit_packages: ["monit"]
+
+# Force reload monit (useful for roles, that are creating their own checks)
+# or, if you are creating checks on your own.
+wtd_monit_reload_checks: False
+
+# Configure Monit
+# For more information about the values, please consult the monitrc file.
+#
+# Set the check interval
+wtd_monit_daemon: 30
+wtd_monit_start_delay: 120
+
+wtd_monit_logfile: "syslog"
+wtd_monit_pidfile: ""
+wtd_monit_idfile: ""
+wtd_monit_statefile: ""
+
+wtd_monit_mailserver: ""
+wtd_monit_eventqueue: ""
+wtd_monit_mmonit: ""
+wtd_monit_alerts: []
+
+# Configure Monit Webserver
+wtd_monit_webserver_state: True
+
+wtd_monit_webserver_port: 2812
+wtd_monit_webserver_address: "localhost"
+wtd_monit_webserver_signature: "disable"
+wtd_monit_webserver_ssl: False
+wtd_monit_webserver_pemfile: ""
+
+# Allow sudoers to connect (works only, if pam is true)
+# You can also use multiple options.
+wtd_monit_webserver_allows: ["@wheel"]
+# Write the pam config for monit webserver
+# FIXME: A valid while-true-do.pam role might be an idea
+wtd_monit_webserver_pam: True
+
+# Preconfigure some default checks
+wtd_monit_default_checks: True

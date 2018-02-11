@@ -1,0 +1,29 @@
+---
+- name: Configure Monit
+  template:
+    src: monitrc.j2
+    dest: /etc/monitrc
+    owner: root
+    group: root
+    mode: 0600
+  notify:
+    - Restart Monit
+  tags:
+    - monit
+
+- name: Create Monit Directory
+  file:
+    path: /etc/monit.d
+    state: directory
+    mode: 0755
+
+- name: Configure pam for Monit
+  template:
+    src: pam_monit.j2
+    dest: /etc/pam.d/monit
+    owner: root
+    group: root
+    mode: 0644
+  tags:
+    - monit
+    - pam

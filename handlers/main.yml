@@ -1,0 +1,8 @@
+---
+# handlers/main.yml for monit
+- name: Restart Monit
+  service:
+    name: monit
+    state: restarted
+  tags:
+    - monit

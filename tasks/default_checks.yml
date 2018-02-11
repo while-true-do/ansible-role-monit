@@ -1,0 +1,24 @@
+---
+# This file is used to create some default checks.
+# The checks are not configurable, but you are free to diable them and setup your own.
+
+- name: Create Check "System"
+  template:
+    src: default_system.j2
+    dest: /etc/monit.d/system
+    owner: root
+    group: root
+    mode: 0600
+  tags:
+    - monit
+
+
+- name: Create Check "Filesystem"
+  template:
+    src: default_filesystem.j2
+    dest: /etc/monit.d/filesystem
+    owner: root
+    group: root
+    mode: 0600
+  tags:
+    - monit
