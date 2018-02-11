@@ -11,7 +11,7 @@
 
 - name: Include Configuration
   include_tasks: configure.yml
- 
+
 - name: Include Default Checks
   include_tasks: default_checks.yml
   when: wtd_monit_default_checks
