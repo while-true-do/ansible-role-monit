@@ -24,7 +24,7 @@ install:
   - ansible --version
 
   # Link github repo to ansible-galaxy name
-  - ln -s  $PWD ../while-true-do.monit
+  - ln -s  $PWD ../while_true_do.monit
 
 # Run the tests
 script:

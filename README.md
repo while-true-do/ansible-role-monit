@@ -16,16 +16,16 @@ You can add more checks with another role. Please see the example below.
 
 ## Installation
 
-Install from [Ansible Galaxy](https://galaxy.ansible.com/while-true-do/monit)
+Install from [Ansible Galaxy](https://galaxy.ansible.com/while_true_do/monit)
 
 ```
-ansible-galaxy install while-true-do.monit
+ansible-galaxy install while_true_do.monit
 ```
 
 Install from [Github](https://github.com/while-true-do/ansible-role-monit)
 
 ```
-git clone https://github.com/while-true-do/ansible-role-monit.git while-true-do.monit
+git clone https://github.com/while-true-do/ansible-role-monit.git while_true_do.monit
 ```
 
 ## Requirements
@@ -85,7 +85,7 @@ wtd_monit_webserver_pemfile: ""
 # You can also use multiple options.
 wtd_monit_webserver_allows: ["@wheel"]
 # Write the pam config for monit webserver
-# FIXME: A valid while-true-do.pam role might be an idea
+# FIXME: A valid while_true_do.pam role might be an idea
 wtd_monit_webserver_pam: True
 
 # Preconfigure some default checks
@@ -99,7 +99,7 @@ Simple Example:
 ```yaml
 - hosts: servers 
   roles:
-    - { role: while-true-do.monit }
+    - { role: while_true_do.monit }
 ```
 
 Advanced Example:
@@ -107,14 +107,14 @@ Advanced Example:
 ```yaml
 - hosts: servers 
   roles:
-    - { role: while-true-do.monit, wtd_monit_default_checks: False, wtd_monit_webserver_state: False }
+    - { role: while_true_do.monit, wtd_monit_default_checks: False, wtd_monit_webserver_state: False }
 ```
 
 Usage in other roles:
 
 ```
 # defaults/main.yml
-# Vars for dependency role while-true-do.monit
+# Vars for dependency role while_true_do.monit
 wtd_monit_reload_checks: True
 ```
 
