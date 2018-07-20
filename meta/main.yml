@@ -1,6 +1,7 @@
 dependencies: []
 
 galaxy_info:
+  role_name: monit
   author: while-true-do.org
   description: A role to install and configure Monit.
   company: while-true-do.org
