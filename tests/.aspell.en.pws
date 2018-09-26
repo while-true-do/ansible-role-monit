@@ -4,6 +4,8 @@ Ansible
 aspell
 Github
 init
+Monit
+pam
 passlib
 reachability
 refactoring
