@@ -40,7 +40,9 @@ Used Modules:
 
 ## Dependencies
 
-None.
+The following dependencies are needed on the target host:
+
+- enabled EPEL repository (can be done via https://galaxy.ansible.com/while_true_do/repo_epel)
 
 ## Role Variables
 
